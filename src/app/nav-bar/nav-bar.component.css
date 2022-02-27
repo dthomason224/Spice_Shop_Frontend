@@ -1,0 +1,45 @@
+.flex {
+  display: flex;
+  gap: var(--gap, 2rem);
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation a {
+  font-weight: 700;
+  margin-inline-end: 0.5em;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+@media (max-width: 35em) {
+  .navigation {
+    position: fixed;
+    --gap: 2em;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+    background: lightblue;
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2em;
+    transform: translateX(100%);
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background: url('https://mdbcdn.b-cdn.net/img/svg/hamburger3.svg?color=00FBD8-menu.png');
+
+    border: 0;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+}

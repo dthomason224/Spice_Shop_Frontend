@@ -1,1 +1,18 @@
-<p>nav-bar works!</p>
+<button #navToggle (click)="open()" class="nav-toggle" aria-controls="navigation" aria-expanded="false"></button>
+
+<nav>
+  <ul #nav data-visible="false" id="navigation" class="navigation flex">
+    <li>
+      <a routerLink="/products">
+        Products
+      </a>
+    </li>
+    <li>
+      <a href="">
+        Categories
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
