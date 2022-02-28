@@ -1,18 +1,24 @@
-<button #navToggle (click)="open()" class="nav-toggle" aria-controls="navigation" aria-expanded="false"></button>
+<mat-toolbar>
+  <span>Title</span>
+  <button #navToggle (click)="open()" class="nav-toggle" aria-controls="navigation" aria-expanded="false"></button>
 
-<nav>
-  <ul #nav data-visible="false" id="navigation" class="navigation flex">
-    <li>
-      <a routerLink="/products">
-        Products
-      </a>
-    </li>
-    <li>
-      <a href="">
-        Categories
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav>
+    <ul #nav data-visible="false" id="navigation" class="navigation flex">
+      <li>
+        <a routerLink="/products">
+          Products
+        </a>
+      </li>
+      <li>
+        <a href="">
+          Categories
+        </a>
+      </li>
+      <li>
+        <fa-icon [icon]="faShoppingCart" ></fa-icon>
+      </li>
+    </ul>
+  </nav>
+</mat-toolbar>
 
 <router-outlet></router-outlet>

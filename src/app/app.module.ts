@@ -1,4 +1,3 @@
-import { MatCard } from '@angular/material/card';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from "@angular/common/http";
@@ -10,7 +9,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductByCategoryComponent } from './product-by-category/product-by-category.component';
 import { MatCardModule } from "@angular/material/card";
+import { MatToolbarModule } from "@angular/material/toolbar";
 import { AppRoutingModule } from './app-routing.module';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,10 @@ import { AppRoutingModule } from './app-routing.module';
     NgbModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
