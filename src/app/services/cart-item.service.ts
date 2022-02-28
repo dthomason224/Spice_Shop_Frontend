@@ -1,5 +1,5 @@
 import { CartItem } from '../models/cart-item.model';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -7,6 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CartItemService {
+  header = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   private cartItemUrl: string;
 
   constructor(private http: HttpClient) {
@@ -17,7 +20,7 @@ export class CartItemService {
     return this.http.get<CartItem[]>(this.cartItemUrl);
   }
 
-  public create(data: any): Observable<any> {
-    return this.http.post(this.cartItemUrl, data);
+  public create(cartItem: CartItem): Observable<Object> {
+    return this.http.post<CartItem>(this.cartItemUrl, cartItem, this.header);
   }
 }

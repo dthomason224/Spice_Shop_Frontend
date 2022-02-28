@@ -3,6 +3,7 @@ import { CartItem } from './../models/cart-item.model';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
+import { HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-product-by-category',
@@ -12,9 +13,11 @@ import { ProductService } from '../services/product.service';
 export class ProductByCategoryComponent implements OnInit {
 
   products: Product[] = [];
-  cartItem: CartItem = {};
+  cartItem: CartItem;
 
-  constructor(private productService: ProductService, private cartItemService: CartItemService) { }
+  constructor(private productService: ProductService, private cartItemService: CartItemService) {
+    this.cartItem = new CartItem ();
+  }
 
   ngOnInit(): void {
     this.productService.findAll().subscribe(data => {
@@ -24,11 +27,16 @@ export class ProductByCategoryComponent implements OnInit {
 
   addToCart(id: number | undefined) {
     this.cartItem = {
-      id: id,
-      quantity: 1
+      "quantity": 1,
+      "product": {
+        "id": id
+      }
     }
 
-    this.cartItemService.create(this.cartItem);
+    this.cartItemService.create(this.cartItem).subscribe(data => {
+      console.log(data);
+
+    });
 
   }
 
