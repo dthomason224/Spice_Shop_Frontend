@@ -3,7 +3,11 @@
   flex-direction: row;
 }
 
-#total {
+.item {
+  height: 500px;
+}
+
+#summary {
   flex-direction: row;
   justify-content: center;
   width: 33%;
@@ -11,4 +15,14 @@
 
 .flex {
   display: flex;
+}
+
+.fill {
+  width: 100%;
+}
+
+.unstyled-button {
+  border: none;
+  padding: 0;
+  background: none;
 }

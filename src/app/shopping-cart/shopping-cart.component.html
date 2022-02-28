@@ -1,17 +1,38 @@
 <div class="flex">
-  <div id="items-list">
+  <div id="items-list" >
     <mat-list>
       <div mat-subheader>Items</div>
-      <mat-list-item *ngFor="let cartItem of cartItems">
-        <div mat-line><img src="" alt=""></div>
-        <div mat-line>{{ cartItem.product?.name }}</div>
-        <div mat-line>{{ cartItem.quantity }}</div>
-        <div mat-line>$ {{ cartItem.product?.price }}</div>
+      <mat-list-item fxLayout="column" fxLayoutAlign="start stretch" id="item" *ngFor="let cartItem of cartItems">
+        <div class="fill" fxLayout="row" fxLayoutAlign="space-around">
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div mat-line><img src="" alt=""></div>
+            <div mat-line>{{ cartItem.product?.name }}</div>
+          </div>
+          <div id="controls" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
+            <fa-icon [icon]="faMinusCircle"></fa-icon>
+            <div mat-line>{{ cartItem.quantity }}</div>
+            <fa-icon [icon]="faPlusCircle"></fa-icon>
+            <div mat-line>$ {{ cartItem.product?.price }}</div>
+            <button class="unstyled-button" (click)="deleteCartItem(cartItem.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
+          </div>
+        </div>
         <mat-divider></mat-divider>
       </mat-list-item>
     </mat-list>
   </div>
-  <div id="total" class="flex">
-    <h1>Total</h1>
+  <div id="summary" fxLayout="column" fxLayoutAlign="center center">
+    <div>
+      <h1>Cart Summary</h1>
+    </div>
+    <div>
+      <h3>Full Price</h3>
+      <div mat-line></div>
+      <div fxLayout="row" fxLayoutAlign="space-around center">
+        <h2>Total</h2>
+        <h2>$</h2>
+      </div>
+      <div matLine></div>
+      <button>Checkout</button>
+    </div>
   </div>
 </div>
