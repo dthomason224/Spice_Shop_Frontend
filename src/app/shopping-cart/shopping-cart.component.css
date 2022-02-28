@@ -1,0 +1,14 @@
+#items-list {
+  width: 66%;
+  flex-direction: row;
+}
+
+#total {
+  flex-direction: row;
+  justify-content: center;
+  width: 33%;
+}
+
+.flex {
+  display: flex;
+}

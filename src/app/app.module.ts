@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductByCategoryComponent } from './product-by-category/product-by-category.component';
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatListModule } from "@angular/material/list";
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -32,6 +33,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     BrowserAnimationsModule,
     MatCardModule,
     MatToolbarModule,
+    MatListModule,
     FlexLayoutModule,
     FontAwesomeModule,
   ],

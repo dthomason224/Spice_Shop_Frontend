@@ -1,6 +1,17 @@
-<div>
-  <div *ngFor="let cartItem of cartItems">
-    <p>{{ cartItem.product?.name }}</p>
-    <p>{{ cartItem.product?.price }}</p>
+<div class="flex">
+  <div id="items-list">
+    <mat-list>
+      <div mat-subheader>Items</div>
+      <mat-list-item *ngFor="let cartItem of cartItems">
+        <div mat-line><img src="" alt=""></div>
+        <div mat-line>{{ cartItem.product?.name }}</div>
+        <div mat-line>{{ cartItem.quantity }}</div>
+        <div mat-line>$ {{ cartItem.product?.price }}</div>
+        <mat-divider></mat-divider>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <div id="total" class="flex">
+    <h1>Total</h1>
   </div>
 </div>
