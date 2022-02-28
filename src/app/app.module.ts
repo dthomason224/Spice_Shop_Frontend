@@ -13,6 +13,7 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NavBarComponent,
     ProductListComponent,
     ProductByCategoryComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
