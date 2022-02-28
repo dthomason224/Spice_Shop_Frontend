@@ -1,3 +1,5 @@
+import { CartItemService } from './../services/cart-item.service';
+import { CartItem } from './../models/cart-item.model';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductService } from '../services/product.service';
@@ -10,13 +12,24 @@ import { ProductService } from '../services/product.service';
 export class ProductByCategoryComponent implements OnInit {
 
   products: Product[] = [];
+  cartItem: CartItem = {};
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private cartItemService: CartItemService) { }
 
   ngOnInit(): void {
     this.productService.findAll().subscribe(data => {
       this.products = data;
     })
+  }
+
+  addToCart(id: number | undefined) {
+    this.cartItem = {
+      id: id,
+      quantity: 1
+    }
+
+    this.cartItemService.create(this.cartItem);
+
   }
 
 }

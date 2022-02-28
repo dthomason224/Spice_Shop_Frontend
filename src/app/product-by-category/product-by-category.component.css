@@ -6,6 +6,11 @@
   display: flex;
 }
 
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
 mat-card {
   width: 300px;
   text-align: center;
