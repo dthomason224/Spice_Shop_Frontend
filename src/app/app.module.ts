@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductByCategoryComponent } from './product-by-category/product-by-category.component';
 import { MatCardModule } from "@angular/material/card";
@@ -18,6 +19,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { MatInputModule } from "@angular/material/input";
 import { QuantityControlComponent } from './quantity-control/quantity-control.component';
 
 
@@ -34,6 +36,7 @@ import { QuantityControlComponent } from './quantity-control/quantity-control.co
     BrowserModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
@@ -41,6 +44,7 @@ import { QuantityControlComponent } from './quantity-control/quantity-control.co
     MatListModule,
     MatMenuModule,
     MatButtonModule,
+    MatInputModule,
     MatExpansionModule,
     FlexLayoutModule,
     FontAwesomeModule,
