@@ -10,6 +10,19 @@
         </a>
       </li>
       <li>
+        <button mat-button [matMenuTriggerFor]="menuRef">
+            Products
+        </button>
+
+        <mat-menu #menuRef="matMenu">
+          <div *ngFor="let category of categories">
+            <button routerLink="/categories/{{category.name}}/products" mat-menu-item (click)="navigateToProductByCategory(category.name)">
+                {{ category.name }}
+            </button>
+          </div>
+        </mat-menu>
+      </li>
+      <li>
         <a href="">
           Categories
         </a>

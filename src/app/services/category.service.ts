@@ -1,3 +1,4 @@
+import { Product } from './../models/product';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,5 +16,9 @@ export class CategoryService {
 
   public findAll(): Observable<Category[]> {
     return this.http.get<Category[]>(this.categoryUrl);
+  }
+
+  public findProductsByCategory(name: string | undefined): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.categoryUrl + name}/products/`)
   }
 }

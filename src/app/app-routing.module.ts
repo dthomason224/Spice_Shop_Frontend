@@ -10,6 +10,16 @@ const routes: Routes = [{
 {
   path: 'shopping-cart',
   component: ShoppingCartComponent
+},
+{
+  path: 'categories',
+  children: [
+    {
+      path: ':name/products',
+      component: ProductByCategoryComponent
+
+    }
+  ]
 }]
 
 @NgModule({
