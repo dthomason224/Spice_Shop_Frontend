@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { MatButtonModule } from "@angular/material/button";
+import { MatExpansionModule } from "@angular/material/expansion";
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
+    MatButtonModule,
+    MatExpansionModule,
     FlexLayoutModule,
     FontAwesomeModule,
   ],

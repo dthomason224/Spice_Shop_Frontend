@@ -5,22 +5,22 @@
   <nav>
     <ul #nav data-visible="false" id="navigation" class="navigation flex">
       <li>
-        <a routerLink="/products">
-          Products
-        </a>
-      </li>
-      <li>
-        <button mat-button [matMenuTriggerFor]="menuRef">
-            Products
-        </button>
-
-        <mat-menu #menuRef="matMenu">
-          <div *ngFor="let category of categories">
-            <button routerLink="/categories/{{category.name}}/products" mat-menu-item (click)="navigateToProductByCategory(category.name)">
-                {{ category.name }}
-            </button>
+        <div ngbDropdown #myDrop="ngbDropdown">
+          <button mat-button id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Products</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual">
+            <div>
+              <h2>Categories</h2>
+              <mat-divider></mat-divider>
+            </div>
+            <div *ngFor="let category of categories">
+              <button mat-button ngbDropdownItem routerLink="/categories/{{category.name}}/products">{{ category.name }}</button>
+            </div>
+            <div>
+              <mat-divider></mat-divider>
+              <button mat-button ngbDropdownItem routerLink="/products">View All</button>
+            </div>
           </div>
-        </mat-menu>
+        </div>
       </li>
       <li>
         <a href="">
