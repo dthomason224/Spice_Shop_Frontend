@@ -18,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { MatButtonModule } from "@angular/material/button";
 import { MatExpansionModule } from "@angular/material/expansion";
+import { QuantityControlComponent } from './quantity-control/quantity-control.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { MatExpansionModule } from "@angular/material/expansion";
     ProductListComponent,
     ProductByCategoryComponent,
     ShoppingCartComponent,
+    QuantityControlComponent,
   ],
   imports: [
     BrowserModule,
