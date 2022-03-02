@@ -9,7 +9,7 @@
         </div>
         <img class="img-responsive" mat-card-image src="{{ product.image }}" alt="">
         <mat-card-actions>
-          <app-quantity-control></app-quantity-control>
+          <app-quantity-control (numChanged)="quantityChangeHandler($event)"></app-quantity-control>
           <button (click)="addToCart(product.id)" mat-button>ADD TO CART</button>
         </mat-card-actions>
       </mat-card>
