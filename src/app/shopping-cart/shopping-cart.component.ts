@@ -15,9 +15,11 @@ export class ShoppingCartComponent implements OnInit {
   faTrash = faTrash
 
   cartItems: CartItem[] = [];
+  total: number = 0;
 
-  constructor(private cartItemService: CartItemService, private router: Router,
-    private route: ActivatedRoute) { }
+  constructor(private cartItemService: CartItemService, private router: Router) {
+    // this.total = this.getTotal();
+  }
 
   ngOnInit(): void {
     this.getCartItems();
@@ -26,6 +28,7 @@ export class ShoppingCartComponent implements OnInit {
   deleteCartItem(id: number) {
     this.cartItemService.delete(id).subscribe(data => {
       console.log(data);
+      this.total = 0;
       this.getCartItems();
 
     })
@@ -34,11 +37,25 @@ export class ShoppingCartComponent implements OnInit {
   getCartItems() {
     this.cartItemService.findAll().subscribe(data => {
       this.cartItems = data;
+
+      this.getTotal(this.cartItems);
     })
   }
 
   goToShoppingCartList(): void {
     this.router.navigate(['/shopping-cart']);
+  }
+
+  getTotal(cartItems: CartItem[]): void {
+    cartItems.forEach(element => {
+      if (element.quantity === undefined || element.product?.price === undefined) {
+        this.total += 0;
+      } else {
+        this.total += (element.quantity * element.product?.price);
+      }
+    });
+
+    // return this.total;
   }
 
 }
