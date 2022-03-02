@@ -1,9 +1,12 @@
-.products {
-  padding: 16px;
+.product {
+  min-width: 180px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.flex {
-  display: flex;
+.product img {
+  height: 200px;
+  object-fit: contain;
 }
 
 .center {
@@ -11,17 +14,14 @@
   align-items: center;
 }
 
-mat-card {
-  width: 300px;
-  text-align: center;
+.addMargin {
+  margin-top: 20px;
 }
 
-mat-card img {
-  object-fit: cover;
-  object-position: center;
-  width: 100%;
-  height: 80%;
-  max-height: 200px;
+#title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 @media (max-width: 35em) {

@@ -1,9 +1,9 @@
-<div fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="space-around center">
+<div fxLayout="row" fxLayoutGap="8px" fxLayoutAlign="center center">
   <button mat-mini-fab (click)="decrement()">
-    <fa-icon [icon]="faMinusCircle" transform="grow-15"></fa-icon>
+    <fa-icon [icon]="faMinusCircle" transform="grow-10"></fa-icon>
   </button>
     <input #number matInput type="number" [(ngModel)]="initialNum">
   <button mat-mini-fab (click)="increment()">
-    <fa-icon [icon]="faPlusCircle" transform="grow-15"></fa-icon>
+    <fa-icon [icon]="faPlusCircle" transform="grow-10"></fa-icon>
   </button>
 </div>

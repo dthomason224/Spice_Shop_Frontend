@@ -1,18 +1,14 @@
-<div class="products">
-  <div fxLayout="row wrap" fxLayoutGap="16px grid" fxFlexAlign="stretch">
-    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let product of products">
-      <mat-card class="">
-        <div class="flex center">
-          <mat-card-header>
-            <mat-card-title>{{ product.name }}</mat-card-title>
-          </mat-card-header>
-        </div>
-        <img class="img-responsive" mat-card-image src="{{ product.image }}" alt="">
-        <mat-card-actions>
-          <app-quantity-control></app-quantity-control>
-          <button (click)="addToCart(product.id)" mat-button>ADD TO CART</button>
-        </mat-card-actions>
-      </mat-card>
-    </div>
+<div class="addMargin" fxLayout="row wrap" fxFlexAlign="space-evenly stretch" fxLayoutGap="20px ">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="25%" *ngFor="let product of products">
+      <mat-card class="product" fxLayout="column">
+      <mat-card-header id="title">
+        <mat-card-title>{{ product.name }}</mat-card-title>
+      </mat-card-header>
+      <img class="" mat-card-image src="{{ product.image }}" alt="">
+      <mat-card-actions>
+        <app-quantity-control></app-quantity-control>
+        <button (click)="addToCart(product.id)" mat-button>ADD TO CART</button>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>

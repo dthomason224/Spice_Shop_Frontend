@@ -5,11 +5,11 @@
       <mat-list-item fxLayout="column" fxLayoutAlign="start stretch" id="item" *ngFor="let cartItem of cartItems">
         <div class="fill" fxLayout="row" fxLayoutAlign="space-around">
           <div fxLayout="row" fxLayoutAlign="start center">
-            <div mat-line><img src="" alt=""></div>
+            <div class="image-container" mat-line><img src=" " alt=""></div>
             <div mat-line>{{ cartItem.product?.name }}</div>
           </div>
-          <div id="controls" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
-            <app-quantity-control></app-quantity-control>
+          <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="15px">
+            <div mat-line>{{cartItem.quantity }}</div>
             <div mat-line>$ {{ cartItem.product?.price }}</div>
             <button class="unstyled-button" (click)="deleteCartItem(cartItem.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
           </div>
