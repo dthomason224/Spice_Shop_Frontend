@@ -9,9 +9,7 @@
             <div mat-line>{{ cartItem.product?.name }}</div>
           </div>
           <div id="controls" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="5px">
-            <fa-icon [icon]="faMinusCircle"></fa-icon>
-            <div mat-line>{{ cartItem.quantity }}</div>
-            <fa-icon [icon]="faPlusCircle"></fa-icon>
+            <app-quantity-control></app-quantity-control>
             <div mat-line>$ {{ cartItem.product?.price }}</div>
             <button class="unstyled-button" (click)="deleteCartItem(cartItem.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
           </div>
@@ -24,15 +22,15 @@
     <div>
       <h1>Cart Summary</h1>
     </div>
-    <div>
+    <div fxLayout="column" fxLayoutAlign="space-between center">
       <h3>Full Price</h3>
       <div mat-line></div>
-      <div fxLayout="row" fxLayoutAlign="space-around center">
+      <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
         <h2>Total</h2>
         <h2>${{ total | number: '1.2-2'}}</h2>
       </div>
       <div matLine></div>
-      <button>Checkout</button>
+      <button mat-button>Checkout</button>
     </div>
   </div>
 </div>

@@ -1,37 +1,34 @@
-<mat-toolbar>
-  <span>Title</span>
-  <button #navToggle (click)="open()" class="nav-toggle" aria-controls="navigation" aria-expanded="false"></button>
+<mat-toolbar fxLayout="row" fxLayoutAlign="space-around center">
+  <div #logo>
+    <img class="cover" src="/assets/images/chili.png" alt="chili">
+  </div>
 
-  <nav>
-    <ul #nav data-visible="false" id="navigation" class="navigation flex">
-      <li>
-        <div ngbDropdown #myDrop="ngbDropdown">
-          <button mat-button id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Products</button>
-          <div ngbDropdownMenu aria-labelledby="dropdownManual">
-            <div>
-              <h2>Categories</h2>
-              <mat-divider></mat-divider>
-            </div>
-            <div *ngFor="let category of categories">
-              <button mat-button ngbDropdownItem routerLink="/categories/{{category.name}}/products">{{ category.name }}</button>
-            </div>
-            <div>
-              <mat-divider></mat-divider>
-              <button mat-button ngbDropdownItem routerLink="/products">View All</button>
-            </div>
-          </div>
+  <span>Spice Shop</span>
+  <div ngbDropdown #myDrop="ngbDropdown" fxLayout="row" fxLayoutAlign="space-around stretch">
+    <button mat-button id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Products</button>
+      <div ngbDropdownMenu aria-labelledby="dropdownManual">
+        <div fxLayout="row" fxLayoutAlign="center center">
+          <h3>Categories</h3>
         </div>
-      </li>
-      <li>
-        <a href="">
-          Categories
-        </a>
-      </li>
-      <li>
-        <a routerLink="/shopping-cart"><fa-icon [icon]="faShoppingCart" ></fa-icon></a>
-      </li>
-    </ul>
-  </nav>
+          <mat-divider></mat-divider>
+        <div *ngFor="let category of categories">
+          <button mat-button ngbDropdownItem routerLink="/categories/{{category.name}}/products">{{ category.name }}</button>
+        </div>
+        <div>
+        <mat-divider></mat-divider>
+        <button mat-button ngbDropdownItem routerLink="/products">View All</button>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center stretch">
+    <input matInput placeholder="Search">
+    <button mat-button>
+      <fa-icon [icon]="faSearch"></fa-icon>
+    </button>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <a routerLink="/shopping-cart"><fa-icon [icon]="faShoppingCart" ></fa-icon></a>
+  </div>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

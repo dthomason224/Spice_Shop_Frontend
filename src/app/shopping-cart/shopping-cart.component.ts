@@ -1,6 +1,6 @@
 import { CartItem } from './../models/cart-item.model';
 import { CartItemService } from './../services/cart-item.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { faMinusCircle, faPlusCircle, faTrash } from "@fortawesome/free-solid-svg-icons";
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,16 +10,13 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  faPlusCircle = faPlusCircle;
-  faMinusCircle = faMinusCircle;
-  faTrash = faTrash
+  faTrash = faTrash;
 
+  quantity: number = 0;
   cartItems: CartItem[] = [];
   total: number = 0;
 
-  constructor(private cartItemService: CartItemService, private router: Router) {
-    // this.total = this.getTotal();
-  }
+  constructor(private cartItemService: CartItemService, private router: Router) {}
 
   ngOnInit(): void {
     this.getCartItems();
@@ -51,11 +48,13 @@ export class ShoppingCartComponent implements OnInit {
       if (element.quantity === undefined || element.product?.price === undefined) {
         this.total += 0;
       } else {
-        this.total += (element.quantity * element.product?.price);
+        this.quantity = element.quantity;
+        this.total += (this.quantity * element.product?.price);
       }
     });
 
-    // return this.total;
+
   }
+
 
 }

@@ -5,6 +5,7 @@ import { CartItemService } from './../services/cart-item.service';
 import { CartItem } from './../models/cart-item.model';
 import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { Product } from '../models/product';
+import { faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-product-by-category',
@@ -12,6 +13,9 @@ import { Product } from '../models/product';
   styleUrls: ['./product-by-category.component.css']
 })
 export class ProductByCategoryComponent implements OnInit {
+  faPlusCircle = faPlusCircle;
+  faMinusCircle = faMinusCircle;
+
   @Input('number') quantity: number;
   categoryName: string = "";
   products: Product[] = [];
