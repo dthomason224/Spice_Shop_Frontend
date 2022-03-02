@@ -6,8 +6,8 @@
       </mat-card-header>
       <img class="" mat-card-image src="{{ product.image }}" alt="">
       <mat-card-actions>
-        <app-quantity-control></app-quantity-control>
-        <button (click)="addToCart(product.id)" mat-flat-button>ADD TO CART</button>
+        <app-quantity-control (numChanged)="quantityChangeHandler($event)"></app-quantity-control>
+        <button (click)="addToCart(product.id)" mat-button>ADD TO CART</button>
       </mat-card-actions>
     </mat-card>
   </div>

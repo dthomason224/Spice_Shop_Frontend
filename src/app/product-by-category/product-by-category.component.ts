@@ -18,7 +18,7 @@ export class ProductByCategoryComponent implements OnInit {
 
   @Input('number') quantity: number;
   categoryName: string = "";
-  products: Product[] = [];
+  @Input()products: Product[] = [];
   cartItem: CartItem;
 
   constructor(private categoryService: CategoryService, private cartItemService: CartItemService, private route: ActivatedRoute) {
@@ -39,6 +39,7 @@ export class ProductByCategoryComponent implements OnInit {
     })
   }
 
+  //uses service to consume api and subscribe to the cart items returned
   addToCart(id: number | undefined) {
     this.cartItem = {
       "quantity": this.quantity,
@@ -54,6 +55,7 @@ export class ProductByCategoryComponent implements OnInit {
 
   }
 
+  //tracks number value of input field and updates quantity
   quantityChangeHandler(quantity: number) {
     this.quantity = quantity;
   }

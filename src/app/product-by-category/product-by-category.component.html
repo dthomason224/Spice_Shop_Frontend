@@ -5,6 +5,7 @@
         <mat-card-title>{{ product.name }}</mat-card-title>
       </mat-card-header>
       <img class="" mat-card-image src="{{ product.image }}" alt="">
+      <p>${{ product.price }}</p>
       <mat-card-actions>
         <app-quantity-control (numChanged)="quantityChangeHandler($event)"></app-quantity-control>
         <button (click)="addToCart(product.id)" mat-button>ADD TO CART</button>

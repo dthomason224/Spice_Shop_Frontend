@@ -11,11 +11,13 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductListComponent implements OnInit {
 
+  @Input('number') quantity: number;
   @Input() products: Product[] = [];
   cartItem: CartItem;
 
   constructor(private productService: ProductService, private cartItemService: CartItemService) {
     this.cartItem = new CartItem ();
+    this.quantity = 1;
   }
 
   ngOnInit(): void {
@@ -36,5 +38,9 @@ export class ProductListComponent implements OnInit {
       console.log(data);
 
     });
+  }
+
+  quantityChangeHandler(quantity: number) {
+    this.quantity = quantity;
   }
 }

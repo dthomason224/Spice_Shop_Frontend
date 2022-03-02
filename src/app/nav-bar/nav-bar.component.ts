@@ -14,20 +14,12 @@ export class NavBarComponent implements OnInit {
 
   categories: Category[] = [];
 
-  // @ViewChild('nav') navRef: ElementRef;
-  // @ViewChild('navToggle') navToggle: ElementRef;
-
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit(): void {
-    // const nav = this.navRef.nativeElement;
     this.categoryService.findAll().subscribe(data => {
       this.categories = data;
     })
-  }
-
-  open() {
-    // na
   }
 
   navigateToProductByCategory(name: string | undefined) {
