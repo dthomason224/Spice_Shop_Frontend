@@ -30,6 +30,7 @@ image {
   border: none;
   padding: 0;
   background: none;
+  color: red;
 }
 
 .image-container {

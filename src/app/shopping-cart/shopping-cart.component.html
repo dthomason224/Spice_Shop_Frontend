@@ -23,14 +23,14 @@
       <h1>Cart Summary</h1>
     </div>
     <div fxLayout="column" fxLayoutAlign="space-between center">
-      <h3>Full Price</h3>
+      <h3>Full Price ${{ total | number: '1.2-2'}}</h3>
       <div mat-line></div>
       <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
         <h2>Total</h2>
         <h2>${{ total | number: '1.2-2'}}</h2>
       </div>
       <div matLine></div>
-      <button mat-button>Checkout</button>
+      <button mat-flat-button color="primary">Checkout</button>
     </div>
   </div>
 </div>
